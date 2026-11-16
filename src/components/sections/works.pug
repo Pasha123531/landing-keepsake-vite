@@ -1,24 +1,24 @@
 //- Портфоліо
 section#works.works
-  .container
+  .container.filter
     each category, i in categories
-      input.filter-radio(
+      input.filter__radio(
         type='radio',
         name='work-filter',
         id=`f-${category.id}`,
         checked=i === 0
       )
 
-    .works-header
+    .works__header
       h2.section-title Our awesome works
 
-      .works-filters
+      .works__filters
         each category in categories
-          label.filter-chip(for=`f-${category.id}`)= category.label
+          label.filter__chip(for=`f-${category.id}`)= category.label
 
-    .works-grid
+    .works__grid
       each work in works
         +work-card(work)
 
-    .works-action
-      a.btn.btn-secondary.btn-load-more(href='#works') Load more works
+    .works__action
+      a.btn.btn--secondary.btn--load-more(href='#works') Load more works

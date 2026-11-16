@@ -1,0 +1,82 @@
+@use '../abstracts' as *;
+
+.testimonial {
+  background-color: var(--color-bg-light);
+  padding: 32px 24px;
+  position: relative;
+}
+
+.testimonial {
+  &__quote-icon {
+    font-family: serif;
+    font-size: 48px;
+    line-height: 1;
+    color: var(--color-accent);
+    margin-bottom: 12px;
+  }
+}
+
+.testimonial {
+  &__text {
+    font-family: var(--font-text);
+    font-weight: 300; /* Open Sans Light */
+    font-size: 16px; /* Мобільний розмір */
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    margin-bottom: 28px;
+  }
+}
+
+.testimonial {
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+
+.testimonial {
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+}
+
+.testimonial {
+  &__dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.testimonial {
+  &__dots .testimonial__dot {
+    width: 16px;
+    height: 3px;
+    background-color: var(--color-border);
+    transition: background-color 0.3s ease;
+  }
+}
+
+.testimonial {
+  &__dots .testimonial__dot--active {
+    background-color: var(--color-accent);
+  }
+}
+
+@include mq(lg) {
+  .testimonial {
+    padding: 48px 56px 44px;
+  }
+
+  .testimonial {
+    &__text {
+      font-size: 22px;
+      margin-bottom: 36px;
+    }
+  }
+}

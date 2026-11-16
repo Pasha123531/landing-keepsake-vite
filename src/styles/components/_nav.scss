@@ -1,0 +1,86 @@
+@use '../abstracts' as *;
+
+.nav {
+  display: none;
+}
+
+@include mq(lg) {
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .nav {
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+  }
+
+  .nav {
+    &__link {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-text-dark);
+      transition: color 0.3s;
+      font-weight: 400;
+    }
+  }
+
+  .nav__link:hover,
+  .nav__link--active {
+    color: var(--color-accent);
+  }
+}
+
+.nav {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  left: 0;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgb(0 0 0 / 10%);
+}
+
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.nav {
+  &__link {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+  }
+}
+
+.nav {
+  &__link:focus-visible {
+    @include focus-ring;
+  }
+}
+
+@include mq(lg) {
+  .nav {
+    position: static;
+    flex-direction: row;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .nav {
+    &__list {
+      flex-direction: row;
+    }
+  }
+}

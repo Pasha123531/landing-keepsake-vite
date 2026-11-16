@@ -1,38 +1,38 @@
 footer#contact.footer
   .container
-    .footer-top
+    .footer__top
       each column in footerColumns
-        .footer-col
-          h2.footer-title= column.title
-          ul.footer-links
+        .footer__col
+          h2.footer__title= column.title
+          ul.footer__links
             each link in column.links
               li
                 a(href='#')= link
 
-      .footer-col.footer-col-newsletter
-        h2.footer-title Newsletter
-        p.newsletter-desc Fresh case studies and design notes, once a month.
+      .footer__col.footer__col--newsletter.newsletter
+        h2.footer__title Newsletter
+        p.newsletter__desc Fresh case studies and design notes, once a month.
 
-        form.newsletter-form(action='#', method='post')
-          .newsletter-input-group
+        form.newsletter__form(action='#', method='post')
+          .newsletter__input-group
             input(
               type='email',
               placeholder='Your email address',
               required,
               aria-label='Your email address'
             )
-            button.btn.btn-primary.btn-subscribe(type='submit') Subscribe
+            button.btn.btn--primary.btn--subscribe(type='submit') Subscribe
 
-          label.newsletter-consent
+          label.newsletter__consent
             input(type='checkbox', required)
             span I agree to the privacy policy
 
-    .footer-divider
+    .footer__divider
 
-    .footer-bottom
-      p.footer-copyright © 2026 Keepsake. All rights reserved.
+    .footer__bottom
+      p.footer__copyright © 2026 Keepsake. All rights reserved.
 
-      .footer-socials
+      .footer__socials
         each social in socials
           a(href='#', aria-label=social.label)
             img(src=`./icons/${social.icon}`, alt='', width='28', height='28')

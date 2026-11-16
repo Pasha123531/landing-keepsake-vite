@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+@include mq(lg) {
+  .favorite-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--color-accent);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .favorite-btn:hover {
+    background-color: var(--color-accent-hover);
+  }
+}
+
+.favorite-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: #fff;
+  background-color: var(--color-accent);
+  border: 0;
+  cursor: pointer;
+}

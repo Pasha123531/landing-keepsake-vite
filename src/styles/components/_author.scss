@@ -1,0 +1,50 @@
+@use '../abstracts' as *;
+
+.author {
+  &__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.author {
+  &__details {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.author {
+  &__name {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-dark);
+  }
+}
+
+.author {
+  &__role {
+    font-family: var(--font-text);
+    font-size: 12px;
+    color: var(--color-muted);
+  }
+}
+
+@include mq(lg) {
+  .author {
+    &__name {
+      font-size: 15px;
+    }
+  }
+
+  .author {
+    &__role {
+      font-size: 13px;
+    }
+  }
+}

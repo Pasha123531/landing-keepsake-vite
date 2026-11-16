@@ -1,0 +1,80 @@
+@use '../abstracts' as *;
+
+.newsletter {
+  &__desc {
+    font-family: var(--font-text);
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--color-muted);
+    margin-bottom: 16px;
+  }
+}
+
+.newsletter {
+  &__input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+}
+
+.newsletter {
+  &__input-group input {
+    background-color: rgb(255 255 255 / 6%);
+    border: 1px solid rgb(255 255 255 / 12%);
+    padding: 12px 16px;
+    font-family: var(--font-text);
+    font-size: 13px;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+}
+
+.newsletter {
+  &__input-group input:focus {
+    border-color: var(--color-accent);
+  }
+}
+
+.newsletter {
+  &__input-group input::placeholder {
+    color: var(--color-muted);
+  }
+}
+
+.newsletter {
+  &__consent {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-text);
+    font-size: 12px;
+    color: var(--color-muted);
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+.newsletter {
+  &__consent input {
+    accent-color: var(--color-accent);
+    cursor: pointer;
+  }
+}
+
+@include mq(lg) {
+  .newsletter {
+    &__input-group {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+
+  .newsletter {
+    &__input-group input {
+      flex: 1;
+    }
+  }
+}

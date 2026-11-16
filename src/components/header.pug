@@ -1,7 +1,7 @@
 header.header
-  .container.header-inner
+  .container.header__inner
     a.logo(href='#', aria-label='Keepsake home')
-      svg.logo-circle(
+      svg.logo__circle(
         viewBox='0 0 34 34',
         width='34',
         height='34',
@@ -16,26 +16,26 @@ header.header
         ) K
       | eepsake
 
-    input#menu-toggle.menu-toggle-checkbox(
+    input#menu-toggle.header__menu-toggle(
       type='checkbox',
       aria-label='Toggle navigation menu',
       aria-controls='main-navigation'
     )
 
     label.burger-menu(for='menu-toggle')
-      span.burger-line
-      span.burger-line
-      span.burger-line
+      span.burger-menu__line
+      span.burger-menu__line
+      span.burger-menu__line
 
-    nav#main-navigation.main-nav(aria-label='Main navigation')
-      ul.nav-list
+    nav#main-navigation.nav(aria-label='Main navigation')
+      ul.nav__list
         each item in navigation
           li
-            a.nav-link(
+            a.nav__link(
               href=item.href,
-              class={ active: item.active },
+              class={ 'nav__link--active': item.active },
               aria-current=item.active ? 'page' : false
             )= item.label
 
-      button.btn-fav(type='button', aria-label='Favourites')
+      button.favorite-btn(type='button', aria-label='Favourites')
         +icon('heart')

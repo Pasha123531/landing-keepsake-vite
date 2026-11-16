@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: rem(18);
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 2px;
+  background-color: var(--color-accent);
+}

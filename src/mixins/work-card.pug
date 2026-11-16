@@ -1,6 +1,10 @@
 mixin work-card(work)
-  article.works-card(class=work.category)
-    - const imageName = work.image ? work.image.replace(/\.png$/, '') : 'profile';
+  article.work-card(class=`work-card--${work.category}`)
+    - let imageName;
+    if work.image
+      - imageName = work.image.replace(/\.png$/, '');
+    else
+      - imageName = 'profile';
     +picture(
       imageName,
       work.title,
@@ -10,8 +14,8 @@ mixin work-card(work)
       '(min-width: 1280px) 357px, 100vw',
     )
 
-    .works-overlay(tabindex='0')
-      .overlay-icon +
-      h3.overlay-title= work.title
-      .overlay-line
-      span.overlay-category= work.category
+    .work-card__overlay(tabindex='0')
+      .work-card__icon +
+      h3.work-card__title= work.title
+      .work-card__line
+      span.work-card__category= work.category

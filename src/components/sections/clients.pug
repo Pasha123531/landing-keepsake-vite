@@ -1,33 +1,33 @@
 //- Клієнти та відгук
 section.clients
   .container
-    .clients-header
+    .clients__header
       h2.section-title Clients &amp; kind words
-      p.clients-intro Some of the teams that trusted us with their brands.
+      p.clients__intro Some of the teams that trusted us with their brands.
 
-    .clients-logos
+    .clients__logos
       each client in clients
         span.client-logo(class=client.className)= client.name
 
-    .testimonial-card
-      .testimonial-quote-icon(aria-hidden='true') “
-      blockquote.testimonial-text Keepsake turned a vague brief into a brand we are proud of. The team was fast, honest about trade-offs and obsessed with the details.
+    .testimonial
+      .testimonial__quote-icon(aria-hidden='true') “
+      blockquote.testimonial__text Keepsake turned a vague brief into a brand we are proud of. The team was fast, honest about trade-offs and obsessed with the details.
 
-      .testimonial-footer
-        .testimonial-author
+      .testimonial__footer
+        .testimonial__author.author
           +picture(
             'avatar',
             'Olena Marchenko',
             400,
             400,
-            'author-avatar',
+            'author__avatar',
             '44px',
           )
-          .author-details
-            span.author-name Olena Marchenko
-            span.author-role Marketing Lead, Nordly
+          .author__details
+            span.author__name Olena Marchenko
+            span.author__role Marketing Lead, Nordly
 
-        .testimonial-dots(aria-hidden='true')
-          span.dot.active
-          span.dot
-          span.dot
+        .testimonial__dots(aria-hidden='true')
+          span.testimonial__dot.testimonial__dot--active
+          span.testimonial__dot
+          span.testimonial__dot

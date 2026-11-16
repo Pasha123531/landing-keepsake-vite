@@ -1,0 +1,88 @@
+@use '../abstracts' as *;
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn {
+  &--primary {
+    background-color: var(--color-accent);
+    color: #fff;
+  }
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background-color: var(--color-accent-hover);
+}
+
+.btn {
+  &--secondary {
+    background-color: #fff;
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-border);
+  }
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus-visible {
+  border-color: var(--color-text-dark);
+}
+
+@include mq(lg) {
+  .btn {
+    font-size: 13px;
+    padding: 14px 32px;
+  }
+}
+
+.btn {
+  &--load-more {
+    width: 100%;
+  }
+}
+
+@include mq(lg) {
+  .btn {
+    &--load-more {
+      width: auto;
+    }
+  }
+}
+
+.btn {
+  &--cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.btn {
+  &--subscribe {
+    border: none;
+    padding: 12px 24px;
+    font-size: 12px;
+  }
+}
+
+@include mq(lg) {
+  .btn {
+    &--subscribe {
+      flex-shrink: 0;
+      font-size: 13px;
+      padding: 12px 24px;
+    }
+  }
+}

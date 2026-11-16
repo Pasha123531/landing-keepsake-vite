@@ -1,0 +1,55 @@
+@use '../abstracts' as *;
+
+.client-logo {
+  color: var(--color-muted);
+  font-size: 20px;
+  letter-spacing: 1px;
+  user-select: none;
+  opacity: 0.8;
+}
+
+.client-logo {
+  &--nordly {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+}
+
+.client-logo {
+  &--halcyon {
+    font-family: serif;
+    font-size: 22px;
+  }
+}
+
+.client-logo {
+  &--arco {
+    font-family: var(--font-heading);
+    letter-spacing: 3px;
+  }
+}
+
+.client-logo {
+  &--pinewood {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: lowercase;
+  }
+}
+
+.client-logo {
+  &--vela {
+    font-family: serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+}
+
+.client-logo {
+  &--ostra {
+    font-family: sans-serif;
+    text-transform: lowercase;
+    letter-spacing: 1.5px;
+  }
+}

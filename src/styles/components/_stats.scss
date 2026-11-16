@@ -1,45 +1,50 @@
 @use '../abstracts' as *;
 
-/* ==========================================================================
-   Stats Section (Mobile First)
-   ========================================================================== */
 .stats {
   padding: 28px 0;
   background-color: #fff;
 }
 
-.stats-inner {
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  padding: 36px 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px 16px;
+.stats {
+  &__inner {
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 36px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 16px;
+  }
 }
 
-.stats-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+.stats {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 
-.stats-number {
-  font-family: var(--font-heading);
-  font-weight: 300;
-  font-size: 38px;
-  line-height: 1;
-  color: var(--color-text-dark);
-  margin-bottom: 8px;
+.stats {
+  &__number {
+    font-family: var(--font-heading);
+    font-weight: 300;
+    font-size: 38px;
+    line-height: 1;
+    color: var(--color-text-dark);
+    margin-bottom: 8px;
+  }
 }
 
-.stats-label {
-  font-family: var(--font-heading);
-  font-size: 12px;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--color-muted);
+.stats {
+  &__label {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-muted);
+  }
 }
 
 @include mq(lg) {
@@ -47,17 +52,23 @@
     padding: 45px 0;
   }
 
-  .stats-inner {
-    grid-template-columns: repeat(4, 1fr);
-    padding: 48px 0;
+  .stats {
+    &__inner {
+      grid-template-columns: repeat(4, 1fr);
+      padding: 48px 0;
+    }
   }
 
-  .stats-number {
-    font-size: 48px;
-    margin-bottom: 12px;
+  .stats {
+    &__number {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
   }
 
-  .stats-label {
-    font-size: 13px;
+  .stats {
+    &__label {
+      font-size: 13px;
+    }
   }
 }

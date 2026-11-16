@@ -1,0 +1,62 @@
+@use '../abstracts' as *;
+
+.filter {
+  &__radio {
+    @include visually-hidden;
+  }
+}
+
+.filter {
+  &__chip {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-dark);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+}
+
+.filter {
+  &__chip:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+}
+
+@each $category in (all, branding, identity, print, web, motion) {
+  [id='f-#{$category}']:focus-visible ~ .works__header [for='f-#{$category}'] {
+    @include focus-ring;
+  }
+}
+
+[id='f-all']:checked ~ .works__header [for='f-all'],
+[id='f-branding']:checked ~ .works__header [for='f-branding'],
+[id='f-identity']:checked ~ .works__header [for='f-identity'],
+[id='f-print']:checked ~ .works__header [for='f-print'],
+[id='f-web']:checked ~ .works__header [for='f-web'],
+[id='f-motion']:checked ~ .works__header [for='f-motion'] {
+  background-color: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
+}
+
+[id='f-branding']:checked ~ .works__grid .work-card:not(.work-card--branding),
+[id='f-identity']:checked ~ .works__grid .work-card:not(.work-card--identity),
+[id='f-print']:checked ~ .works__grid .work-card:not(.work-card--print),
+[id='f-web']:checked ~ .works__grid .work-card:not(.work-card--web),
+[id='f-motion']:checked ~ .works__grid .work-card:not(.work-card--motion) {
+  display: none;
+}
+
+@include mq(lg) {
+  .filter {
+    &__chip {
+      font-size: 13px;
+    }
+  }
+}
