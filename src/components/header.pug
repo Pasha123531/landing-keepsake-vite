@@ -1,2 +1,15 @@
 header.header
-  a.logo(href="#") Keepsake
+  .container.header-inner
+    a.logo(href="#")
+      span.logo-circle K
+      | eepsake
+
+    nav.main-nav(aria-label="Main navigation")
+      ul.nav-list
+        each item in navigation
+          li
+            a.nav-link(
+              href=item.href
+              class={ active: item.active }
+              aria-current=item.active ? 'page' : false
+            )= item.label
