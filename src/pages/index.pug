@@ -1,13 +1,15 @@
 extends ../layouts/main
 
-block header
-  header
-    p Keepsake
+append meta
+  meta(name="description" content="Keepsake is a digital and branding agency.")
+
+block title
+  title Keepsake Design Agency
 
 block content
-  main
-    h1 Keepsake
+  include ../components/header.pug
 
-block footer
-  footer
-    p Лабораторна робота №9
+  main
+    include ../components/sections/hero.pug
+
+  include ../components/footer.pug
