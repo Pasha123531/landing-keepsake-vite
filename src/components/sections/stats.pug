@@ -1,0 +1,8 @@
+//- Статистика
+section.stats(aria-label="Our achievements")
+  .container
+    .stats-inner
+      each stat in stats
+        .stats-item
+          span.stats-number= stat.number
+          span.stats-label= stat.label

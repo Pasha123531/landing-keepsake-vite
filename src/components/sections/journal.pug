@@ -1,0 +1,22 @@
+//- Журнал
+section#journal.journal
+  .container
+    .journal-header
+      h2.section-title From the journal
+      p.journal-intro Notes on process, case studies and things that inspire us.
+
+    .journal-grid
+      each post in journal
+        article.journal-card
+          .journal-thumb
+            img(
+              src=`/images/${post.image}`
+              alt=post.title
+              loading="lazy"
+            )
+
+          .journal-content
+            .journal-meta #{post.date} / #{post.category}
+            h3.journal-card-title= post.title
+            p.journal-card-text Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.
+            a.journal-link(href="#journal") Read more >

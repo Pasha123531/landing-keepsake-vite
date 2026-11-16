@@ -1,0 +1,32 @@
+//- Клієнти та відгук
+section.clients
+  .container
+    .clients-header
+      h2.section-title Clients & kind words
+      p.clients-intro Some of the teams that trusted us with their brands.
+
+    .clients-logos
+      each client in clients
+        span.client-logo(class=client.className)= client.name
+
+    .testimonial-card
+      .testimonial-quote-icon(aria-hidden="true") “
+      blockquote.testimonial-text Keepsake turned a vague brief into a brand we are proud of. The team was fast, honest about trade-offs and obsessed with the details.
+
+      .testimonial-footer
+        .testimonial-author
+          img.author-avatar(
+            src="/icons/Avatar.png"
+            alt="Olena Marchenko"
+            width="44"
+            height="44"
+            loading="lazy"
+          )
+          .author-details
+            span.author-name Olena Marchenko
+            span.author-role Marketing Lead, Nordly
+
+        .testimonial-dots(aria-hidden="true")
+          span.dot.active
+          span.dot
+          span.dot

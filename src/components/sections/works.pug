@@ -1,0 +1,25 @@
+//- Портфоліо
+section#works.works
+  .container
+    each category, i in categories
+      input.filter-radio(
+        type="radio"
+        name="work-filter"
+        id=`f-${category.id}`
+        checked=i === 0
+        aria-label=category.label
+      )
+
+    .works-header
+      h2.section-title Our awesome works
+
+      .works-filters
+        each category in categories
+          label.filter-chip(for=`f-${category.id}`)= category.label
+
+    .works-grid
+      each work in works
+        +work-card(work)
+
+    .works-action
+      a.btn.btn-secondary.btn-load-more(href="#works") Load more works

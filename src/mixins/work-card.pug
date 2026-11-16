@@ -1,0 +1,20 @@
+mixin work-card(work)
+  article.works-card(class=work.category)
+    if work.image
+      img(
+        src=`/images/${work.image}`
+        alt=work.title
+        loading="lazy"
+      )
+    else
+      img(
+        src="https://placehold.co/400x315/222428/222428"
+        alt=work.title
+        loading="lazy"
+      )
+
+    .works-overlay(tabindex="0")
+      .overlay-icon +
+      h3.overlay-title= work.title
+      .overlay-line
+      span.overlay-category= work.category
