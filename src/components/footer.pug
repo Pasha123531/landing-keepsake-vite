@@ -7,24 +7,24 @@ footer#contact.footer
           ul.footer-links
             each link in column.links
               li
-                a(href="#")= link
+                a(href='#')= link
 
       .footer-col.footer-col-newsletter
         h2.footer-title Newsletter
         p.newsletter-desc Fresh case studies and design notes, once a month.
 
-        form.newsletter-form(action="#" method="post")
+        form.newsletter-form(action='#', method='post')
           .newsletter-input-group
             input(
-              type="email"
-              placeholder="Your email address"
-              required
-              aria-label="Your email address"
+              type='email',
+              placeholder='Your email address',
+              required,
+              aria-label='Your email address'
             )
-            button.btn.btn-primary.btn-subscribe(type="submit") Subscribe
+            button.btn.btn-primary.btn-subscribe(type='submit') Subscribe
 
           label.newsletter-consent
-            input(type="checkbox" required)
+            input(type='checkbox', required)
             span I agree to the privacy policy
 
     .footer-divider
@@ -34,10 +34,5 @@ footer#contact.footer
 
       .footer-socials
         each social in socials
-          a(href="#" aria-label=social.label)
-            img(
-              src=`/icons/${social.icon}`
-              alt=""
-              width="28"
-              height="28"
-            )
+          a(href='#', aria-label=social.label)
+            img(src=`./icons/${social.icon}`, alt='', width='28', height='28')

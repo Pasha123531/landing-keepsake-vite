@@ -3,5 +3,9 @@ section.hero
     h1.hero-title We're Keepsake, a digital & branding agency
     p.hero-subtitle Specializing in web design, poster, motion video, based in London. We love to turn ideas into beautiful things.
     .hero-buttons
-      a.btn.btn-primary(href="#works") See our works
-      a.btn.btn-secondary(href="#contact") Get in touch
+      +btn('#works', 'primary')
+        | See our works
+      +btn('#contact', 'secondary')(
+        aria-label='Get in touch with Keepsake'
+      )
+        | Get in touch

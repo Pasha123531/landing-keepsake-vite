@@ -1,36 +1,29 @@
 header.header
   .container.header-inner
-    a.logo(href="#" aria-label="Keepsake home")
+    a.logo(href='#', aria-label='Keepsake home')
       span.logo-circle K
       | eepsake
 
     input#menu-toggle.menu-toggle-checkbox(
-      type="checkbox"
-      aria-label="Toggle navigation menu"
-      aria-controls="main-navigation"
+      type='checkbox',
+      aria-label='Toggle navigation menu',
+      aria-controls='main-navigation'
     )
 
-    label.burger-menu(for="menu-toggle" aria-hidden="true")
+    label.burger-menu(for='menu-toggle', aria-hidden='true')
       span.burger-line
       span.burger-line
       span.burger-line
 
-    nav#main-navigation.main-nav(aria-label="Main navigation")
+    nav#main-navigation.main-nav(aria-label='Main navigation')
       ul.nav-list
         each item in navigation
           li
             a.nav-link(
-              href=item.href
-              class={ active: item.active }
+              href=item.href,
+              class={ active: item.active },
               aria-current=item.active ? 'page' : false
             )= item.label
 
-      button.btn-fav(type="button" aria-label="Favourites")
-        svg(
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          aria-hidden="true"
-        )
-          path(d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z")
+      button.btn-fav(type='button', aria-label='Favourites')
+        +icon('heart')

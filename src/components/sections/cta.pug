@@ -2,4 +2,6 @@
 section.cta
   .container.cta-inner
     h2.cta-title Would you love to work with us?
-    a.btn.btn-primary.btn-cta(href="#contact") Contact us
+    +btn('#contact', 'primary').btn-cta
+      +icon('mail')
+      | Contact us

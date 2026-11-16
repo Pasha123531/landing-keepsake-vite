@@ -1,0 +1,21 @@
+mixin picture(name, alt, width, height, imageClass = '', sizes = '100vw')
+  picture
+    source(
+      type='image/avif',
+      srcset=`./optimized/${name}-200.avif 200w, ./optimized/${name}-400.avif 400w`,
+      sizes=sizes
+    )
+    source(
+      type='image/webp',
+      srcset=`./optimized/${name}-200.webp 200w, ./optimized/${name}-400.webp 400w`,
+      sizes=sizes
+    )
+    img(
+      class=imageClass,
+      src=`./optimized/${name}-400.jpg`,
+      alt=alt,
+      width=width,
+      height=height,
+      loading='lazy',
+      decoding='async'
+    )

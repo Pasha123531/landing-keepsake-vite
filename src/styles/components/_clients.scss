@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Clients & Kind Words (Mobile First)
+   ========================================================================== */
+.clients {
+  padding: 56px 0;
+  background-color: #fff;
+}
+
+.clients-header {
+  margin-bottom: 32px;
+}
+
+.clients-intro {
+  font-family: var(--font-text);
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-text);
+  margin-top: 14px;
+}
+
+/* Сітка логотипів (на мобільному 2x3) */
+.clients-logos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 16px;
+  place-items: center center;
+  margin-bottom: 48px;
+}
+
+.client-logo {
+  color: var(--color-muted);
+  font-size: 20px;
+  letter-spacing: 1px;
+  user-select: none;
+  opacity: 0.8;
+}
+
+.logo-nordly {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.logo-halcyon {
+  font-family: serif;
+  font-size: 22px;
+}
+
+.logo-arco {
+  font-family: var(--font-heading);
+  letter-spacing: 3px;
+}
+
+.logo-pinewood {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.logo-vela {
+  font-family: serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.logo-ostra {
+  font-family: sans-serif;
+  text-transform: lowercase;
+  letter-spacing: 1.5px;
+}
+
+/* Картка відгуку */
+.testimonial-card {
+  background-color: var(--color-bg-light);
+  padding: 32px 24px;
+  position: relative;
+}
+
+.testimonial-quote-icon {
+  font-family: serif;
+  font-size: 48px;
+  line-height: 1;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.testimonial-text {
+  font-family: var(--font-text);
+  font-weight: 300; /* Open Sans Light */
+  font-size: 16px; /* Мобільний розмір */
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  margin-bottom: 28px;
+}
+
+.testimonial-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-dark);
+}
+
+.author-role {
+  font-family: var(--font-text);
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+/* Індикатор слайдера */
+.testimonial-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.testimonial-dots .dot {
+  width: 16px;
+  height: 3px;
+  background-color: var(--color-border);
+  transition: background-color 0.3s ease;
+}
+
+.testimonial-dots .dot.active {
+  background-color: var(--color-accent);
+}

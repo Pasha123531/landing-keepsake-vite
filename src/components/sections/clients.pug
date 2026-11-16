@@ -10,23 +10,24 @@ section.clients
         span.client-logo(class=client.className)= client.name
 
     .testimonial-card
-      .testimonial-quote-icon(aria-hidden="true") “
+      .testimonial-quote-icon(aria-hidden='true') “
       blockquote.testimonial-text Keepsake turned a vague brief into a brand we are proud of. The team was fast, honest about trade-offs and obsessed with the details.
 
       .testimonial-footer
         .testimonial-author
-          img.author-avatar(
-            src="/icons/Avatar.png"
-            alt="Olena Marchenko"
-            width="44"
-            height="44"
-            loading="lazy"
+          +picture(
+            'avatar',
+            'Olena Marchenko',
+            400,
+            400,
+            'author-avatar',
+            '44px',
           )
           .author-details
             span.author-name Olena Marchenko
             span.author-role Marketing Lead, Nordly
 
-        .testimonial-dots(aria-hidden="true")
+        .testimonial-dots(aria-hidden='true')
           span.dot.active
           span.dot
           span.dot

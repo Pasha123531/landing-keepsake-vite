@@ -9,14 +9,17 @@ section#journal.journal
       each post in journal
         article.journal-card
           .journal-thumb
-            img(
-              src=`/images/${post.image}`
-              alt=post.title
-              loading="lazy"
+            +picture(
+              post.image.replace(/\.png$/, ''),
+              post.title,
+              400,
+              400,
+              '',
+              '150px',
             )
 
           .journal-content
-            .journal-meta #{post.date} / #{post.category}
+            .journal-meta #{ post.date } / #{ post.category }
             h3.journal-card-title= post.title
             p.journal-card-text Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.
-            a.journal-link(href="#journal") Read more >
+            a.journal-link(href='#journal') Read more >

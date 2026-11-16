@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Services Section (Mobile First)
+   ========================================================================== */
+.services {
+  padding: 56px 0;
+  background-color: #fff;
+}
+
+.services-header {
+  margin-bottom: 40px;
+}
+
+.services-intro {
+  font-family: var(--font-text);
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-text);
+  margin-top: 14px;
+  max-width: none;
+}
+
+/* Сітка 2x2 для планшетів та мобільних пристроїв */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 20px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.service-icon {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.service-title {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  color: var(--color-text-dark);
+}
+
+.service-desc {
+  font-family: var(--font-text);
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--color-text);
+}

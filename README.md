@@ -1,191 +1,42 @@
-# Vite Pug Template
+# Keepsake — лабораторна робота №9
 
-Шаблон для швидкого старту проєктів з використанням **Vite**, **Pug**, та **SCSS**.  
-Структура оптимізована для компонентного підходу: Pug-компоненти, SCSS-модулі та гнучка система підключення стилів.
+Лендінг Keepsake, перенесений із лабораторної №7 на Vite, Pug і SCSS. Адреса для GitHub Pages після налаштування публікації: https://Pasha123531.github.io/landing-keepsake-vite/.
 
----
+## Запуск
 
-## 🔧 Вимоги до середовища
-Для запуску проєкту необхідно мати встановлений Node.js (версія 20 або новіша) та npm.
+Потрібні Git і Node.js LTS версії 20.19+ або 22.12+ (рекомендовано Node.js 24 LTS).
 
-### 1. Перевірка наявності Node.js і npm
-```bash
-node -v
-npm -v
-```
-Якщо у консолі з’явилися версії (наприклад v20.10.0), усе гаразд ✅
-
-### 2. Встановлення Node.js
-Якщо Node.js не встановлено — завантажте останню LTS-версію з офіційного сайту:
-👉 https://nodejs.org
-
-Після встановлення перевірте знову:
-```bash
-node -v
-npm -v
-```
-
-## 🚀 Запуск проєкту
-
-### 1. Встановлення залежностей
 ```bash
 npm install
-```
-
-### 2. Режим розробки
-```bash
 npm run dev
-```
-Проєкт запуститься локально (зазвичай на [http://localhost:5173](http://localhost:5173))  
-Файли автоматично оновлюються при зміні коду.
-
-### 3. Збірка для продакшну
-```bash
 npm run build
-```
-Готові файли з’являться в директорії `dist/`.
-
-### 4. Перегляд зібраної версії
-```bash
 npm run preview
+npm run format
+npm run lint
+npm run images
 ```
 
----
+`npm run images` створює зображення в `public/optimized` з оригіналів у `public/images` і `public/icons`. Готові файли зберігаються в репозиторії, тому для звичайної збірки повторно запускати скрипт не потрібно.
 
-## 🧩 Структура проєкту
+## Структура
 
-```
-src/
- ├─ assets/              # зображення, шрифти, інші ресурси
- ├─ components/          # Pug-компоненти (header, footer, content, ...)
- ├─ data/                # файли з даними
- ├─ includes/            # head, meta, fonts (частини шаблону)
- ├─ layouts/             # основні макети сторінок
- ├─ pages/               # сторінки сайту
- ├─ styles/              # SCSS-структура
- │   ├─ base/            # базові стилі: reset, типографія
- │   ├─ components/      # стилі компонентів
- │   ├─ layout/          # сітка, секції
- │   ├─ utils/           # змінні, міксіни
- │   └─ main.scss        # головний файл стилів
- └─ vite.config.js       # налаштування Vite + Vituum
-```
+- `src/layouts`, `src/pages`, `src/components` — макет, сторінка й секції Pug.
+- `src/data`, `src/mixins` — дані повторюваних елементів і міксини Pug.
+- `src/styles/abstracts`, `base`, `components` — токени, допоміжні функції та стилі компонентів. `_legacy.scss` зберігає частину стилів, які ще потрібно перенести в модулі.
+- `public/optimized` — AVIF, WebP і JPEG для портфоліо, журналу й аватара.
+- `.github/workflows/deploy.yml` — збірка й публікація через GitHub Actions. У налаштуваннях репозиторію Pages потрібно вибрати джерело GitHub Actions.
 
----
+## Інструменти
 
-## 📝 Робота з Pug
+Vite і Vituum збирають сторінку; Pug формує HTML; Sass компілює SCSS; PostCSS і Autoprefixer обробляють CSS за `.browserslistrc`; sharp готує зображення. Prettier і Stylelint перевіряють код, а husky та lint-staged запускають перевірки змінених файлів перед комітом.
 
-### 📄 Мінімальний приклад сторінки (`src/pages/index.pug`)
+Browserslist: останні дві версії Chrome, Firefox, Edge, Safari та iOS Safari.
 
-```pug
-doctype html
-html(lang="en")
-  include ../includes/head.pug
+| Приклад                                  |       До |    Після |
+| ---------------------------------------- | -------: | -------: |
+| CSS із lab-07 / мініфікований CSS збірки | 21 670 Б | 15 127 Б |
+| Робота 7: PNG / WebP 400 px              |  8 348 Б |  2 692 Б |
+| Робота 7: PNG / AVIF 400 px              |  8 348 Б |  2 257 Б |
+| Робота 7: PNG / JPEG 400 px              |  8 348 Б |  5 118 Б |
 
-  body
-    include ../components/header.pug
-
-    main.page
-      section.intro
-        h1 Hello, Vite + Pug + SCSS!
-        p Це приклад простої сторінки з компонентами.
-
-    include ../components/footer.pug
-```
-
----
-
-### 🧱 Приклад компонентів
-
-#### `src/components/header.pug`
-```pug
-header.site-header
-  h2 Логотип або назва сайту
-```
-
-#### `src/components/footer.pug`
-```pug
-footer.site-footer
-  p © 2025 Мій шаблон на Vite + Pug
-```
-
-#### `src/includes/head.pug`
-```pug
-head
-  meta(charset="utf-8")
-  meta(name="viewport", content="width=device-width, initial-scale=1")
-  title Vite Pug Template
-  link(rel="stylesheet", href="/src/styles/main.scss")
-```
-
----
-
-## 🎨 Робота з SCSS
-
-### 📂 Структура стилів
-Головний файл — `src/styles/main.scss`
-
-```scss
-@use 'utils/index' as *;
-@use 'base/index' as *;
-@use 'layout/index' as *;
-@use 'components/index' as *;
-```
-
----
-
-### 📄 Мінімальний приклад `src/styles/utils/_variables.scss`
-```scss
-$color-bg: #f5f5f5;
-$color-text: #222;
-$font-main: 'Inter', sans-serif;
-```
-
----
-
-### 📄 Мінімальний приклад `src/styles/main.scss`
-```scss
-@use 'utils/variables' as *;
-
-body {
-  font-family: $font-main;
-  background-color: $color-bg;
-  color: $color-text;
-  margin: 0;
-  padding: 0;
-}
-
-.site-header,
-.site-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background: #ddd;
-}
-
-.intro {
-  text-align: center;
-  padding: 3rem 1rem;
-}
-```
-
----
-
-## 🧠 Корисні поради
-
-- Усі компоненти підключай через `include`.
-- SCSS імпортуй лише у `main.scss`, а не у Pug-файлах.
-- Додавай зображення до `src/assets/` і використовуй їх у коді як:
-  ```pug
-  img(src="/src/assets/logo.png" alt="Logo")
-  ```
-
----
-
-## 📦 Використані пакети
-
-| Пакет | Опис |
-|-------|------|
-| [Vite](https://vitejs.dev/) | Швидкий білдер проєктів |
-| [Vituum](https://vituum.dev/) | Плагін для шаблонізаторів |
-| [@vituum/vite-plugin-pug](https://www.npmjs.com/package/@vituum/vite-plugin-pug) | Підтримка Pug |
-| [Sass](https://sass-lang.com/) | Препроцесор стилів |
+Вихідні зображення невеликі, тому версія шириною 400 px не додає їм нових деталей. Подальша робота: завершити модульну SCSS-архітектуру, замінити растрові іконки на SVG, перевірити HTML та доступність і переконатися, що сторінка повністю відповідає вимогам лабораторної №7.
