@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 /* ==========================================================================
    Journal Section (Mobile First)
    ========================================================================== */
@@ -82,4 +84,35 @@
 
 .journal-link:hover {
   color: var(--color-accent-hover);
+}
+
+@include mq(lg) {
+  .journal {
+    padding: 90px 0;
+  }
+
+  .journal-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 30px;
+  }
+
+  .journal-card {
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .journal-thumb {
+    width: 140px;
+    height: 140px;
+  }
+
+  .journal-card-title {
+    font-size: 17px;
+  }
+
+  .journal-card-text {
+    font-size: 13px;
+    line-height: 20px;
+  }
 }

@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 /* ==========================================================================
    CTA Section (Mobile First)
    ========================================================================== */
@@ -25,4 +27,14 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
+}
+
+@include mq(lg) {
+  .cta {
+    padding: 90px 0;
+  }
+
+  .cta-title {
+    font-size: 28px;
+  }
 }

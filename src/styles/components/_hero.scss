@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .hero {
   background-color: var(--color-bg-light);
   padding: 56px 0;
@@ -65,4 +67,25 @@
 .btn-secondary:hover,
 .btn-secondary:focus-visible {
   border-color: var(--color-text-dark);
+}
+
+@include mq(lg) {
+  .hero {
+    padding: 64px 0;
+  }
+
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    width: auto;
+    gap: 16px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 14px 32px;
+  }
 }

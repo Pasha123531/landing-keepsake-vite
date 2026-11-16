@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 /* ==========================================================================
    Stats Section (Mobile First)
    ========================================================================== */
@@ -38,4 +40,24 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--color-muted);
+}
+
+@include mq(lg) {
+  .stats {
+    padding: 45px 0;
+  }
+
+  .stats-inner {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 48px 0;
+  }
+
+  .stats-number {
+    font-size: 48px;
+    margin-bottom: 12px;
+  }
+
+  .stats-label {
+    font-size: 13px;
+  }
 }

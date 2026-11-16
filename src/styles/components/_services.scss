@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 /* ==========================================================================
    Services Section (Mobile First)
    ========================================================================== */
@@ -61,4 +63,30 @@
   font-size: 13px;
   line-height: 20px;
   color: var(--color-text);
+}
+
+@include mq(lg) {
+  .services {
+    padding: 90px 0;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .service-icon {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 24px;
+  }
+
+  .service-title {
+    font-size: 18px;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }

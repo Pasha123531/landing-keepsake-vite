@@ -1,7 +1,19 @@
 header.header
   .container.header-inner
     a.logo(href='#', aria-label='Keepsake home')
-      span.logo-circle K
+      svg.logo-circle(
+        viewBox='0 0 34 34',
+        width='34',
+        height='34',
+        aria-hidden='true'
+      )
+        text(
+          x='17',
+          y='25',
+          text-anchor='middle',
+          fill='currentColor',
+          font-size='25'
+        ) K
       | eepsake
 
     input#menu-toggle.menu-toggle-checkbox(

@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 /* ==========================================================================
    Footer (Mobile First)
    ========================================================================== */
@@ -133,4 +135,43 @@
 
 .footer-socials img {
   border-radius: 50%;
+}
+
+@include mq(lg) {
+  .footer {
+    padding: 64px 0 32px;
+  }
+
+  .footer-top {
+    grid-template-columns: 180px 180px 1fr;
+    gap: 60px;
+    margin-bottom: 48px;
+  }
+
+  .footer-col-newsletter {
+    max-width: 480px;
+    justify-self: end;
+    width: 100%;
+  }
+
+  .newsletter-input-group {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .newsletter-input-group input {
+    flex: 1;
+  }
+
+  .btn-subscribe {
+    flex-shrink: 0;
+    font-size: 13px;
+    padding: 12px 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
 }

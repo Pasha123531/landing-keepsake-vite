@@ -1,10 +1,12 @@
+@use '../abstracts' as *;
+
 .works {
   padding: 56px 0;
   background-color: #fff;
 }
 
 .filter-radio {
-  display: none;
+  @include visually-hidden;
 }
 
 .works-header {
@@ -39,10 +41,6 @@
   padding-bottom: 10px;
 }
 
-.works-filters::-webkit-scrollbar {
-  display: none;
-}
-
 .filter-chip {
   font-family: var(--font-heading);
   font-size: 12px;
@@ -59,6 +57,12 @@
 .filter-chip:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
+}
+
+@each $category in (all, branding, identity, print, web, motion) {
+  [id='f-#{$category}']:focus-visible ~ .works-header [for='f-#{$category}'] {
+    @include focus-ring;
+  }
 }
 
 [id='f-all']:checked ~ .works-header [for='f-all'],
@@ -157,4 +161,40 @@
 
 .btn-load-more {
   width: 100%;
+}
+
+@include mq(lg) {
+  .works {
+    padding: 90px 0;
+  }
+
+  .works-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .works-filters {
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+
+  .filter-chip {
+    font-size: 13px;
+  }
+
+  .works-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+
+  .works-card {
+    aspect-ratio: 1 / 0.79;
+  }
+
+  .btn-load-more {
+    width: auto;
+  }
 }

@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 /* ==========================================================================
    Clients & Kind Words (Mobile First)
    ========================================================================== */
@@ -150,4 +152,33 @@
 
 .testimonial-dots .dot.active {
   background-color: var(--color-accent);
+}
+
+@include mq(lg) {
+  .clients {
+    padding: 90px 0;
+  }
+
+  .clients-logos {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+    margin-bottom: 64px;
+  }
+
+  .testimonial-card {
+    padding: 48px 56px 44px;
+  }
+
+  .testimonial-text {
+    font-size: 22px;
+    margin-bottom: 36px;
+  }
+
+  .author-name {
+    font-size: 15px;
+  }
+
+  .author-role {
+    font-size: 13px;
+  }
 }
