@@ -1,0 +1,38 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'tokens' as *;
+
+// Переводить значення з пікселів у rem.
+@function rem($pixels) {
+  @return math.div($pixels, 16) * 1rem;
+}
+
+// Медіазапит за назвою брейкпоінта.
+@mixin mq($breakpoint) {
+  @if not map.has-key($breakpoints, $breakpoint) {
+    @error "Невідомий брейкпоінт: #{$breakpoint}";
+  }
+
+  @media (min-width: map.get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+// Приховує елемент візуально, залишаючи його доступним.
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Оформлює видимий фокус для клавіатурної навігації.
+@mixin focus-ring($color: var(--color-accent)) {
+  outline: 2px solid $color;
+  outline-offset: 3px;
+}

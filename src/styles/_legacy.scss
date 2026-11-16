@@ -1,22 +1,8 @@
+@use 'abstracts' as *;
 /* ==========================================================================
    Дизайн-токени (CSS-змінні)
    ========================================================================== */
-:root {
-    --color-accent: #F95858;
-    --color-accent-hover: #E44646;
-    --color-teal: #2CD5C4;
-    --color-text-dark: #3A3A3C;
-    --color-text: #666A6E;
-    --color-muted: #9AA0A6;
-    --color-bg-light: #F0F3F4;
-    --color-border: #E1E5E8;
-    --color-footer: #2A2A2D;
-    --color-overlay: rgba(30, 32, 36, 0.82);
 
-    --font-heading: 'Oswald', sans-serif;
-    --font-text: 'Open Sans', sans-serif;
-    --font-logo: 'Dancing Script', cursive;
-}
 
 /* ==========================================================================
    Скидання стилів
@@ -856,7 +842,7 @@ h1, h2, h3 {
 /* ==========================================================================
    Медіазапити для десктопу (від 1280px)
    ========================================================================== */
-@media (min-width: 1280px) {
+@include mq(lg) {
     body { padding-top: 100px; }
     .container { padding: 0 90px; max-width: 1280px; }
 
