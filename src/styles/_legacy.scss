@@ -895,7 +895,7 @@ h1, h2, h3 {
     .works-card { aspect-ratio: 1 / 0.79; }
     .btn-load-more { width: auto; }
 }
-
+@include mq(lg) {
 /* CTA Desktop */
 .cta {
     padding: 90px 0;
@@ -1043,4 +1043,71 @@ h1, h2, h3 {
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
+}
+}
+// Мобільне меню
+.menu-toggle-checkbox {
+    @include visually-hidden;
+
+    display: block;
+}
+
+.menu-toggle-checkbox:focus-visible + .burger-menu {
+    @include focus-ring;
+}
+
+.menu-toggle-checkbox:checked ~ .main-nav {
+    display: flex;
+}
+
+.main-nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgb(0 0 0 / 10%);
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+}
+
+.nav-link:focus-visible {
+    @include focus-ring;
+}
+
+.btn-fav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: #fff;
+    background-color: var(--color-accent);
+    border: 0;
+    cursor: pointer;
+}
+
+@include mq(lg) {
+    .main-nav {
+        position: static;
+        flex-direction: row;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .nav-list {
+        flex-direction: row;
+    }
 }
